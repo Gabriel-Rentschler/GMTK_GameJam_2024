@@ -40,10 +40,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rh0of")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_bogx3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 5)
+platform_on_leave = 1
+
+[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.606362, -2.06888)
+freeze_mode = 1
 
 [node name="Tha Cube" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04949, -2)
-mass = 0.2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68811, -3.92394)
+freeze_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_erfcf")
