@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://i80ug0risqtg"]
+
+[ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="1_y0gf5"]
+[ext_resource type="Script" path="res://Entities/resizable_obj.gd" id="1_y3f4m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lni23"]
+albedo_texture = ExtResource("1_y0gf5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_sx308"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obfqe"]
+
+[node name="Tha Cube" type="RigidBody3D" groups=["resizable"]]
+script = ExtResource("1_y3f4m")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lni23")
+mesh = SubResource("BoxMesh_sx308")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_obfqe")

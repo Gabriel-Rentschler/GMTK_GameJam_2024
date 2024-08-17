@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://jliupg6w3srw"]
+
+[ext_resource type="Script" path="res://Entities/player.gd" id="1_tjnu7"]
+[ext_resource type="Script" path="res://Entities/Resizer.gd" id="2_if3pt"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdj5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_83nnk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sfvtn"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_tjnu7")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_gxdj5")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_83nnk")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.671625, -0.252883)
+
+[node name="GunRay" type="RayCast3D" parent="Camera"]
+unique_name_in_owner = true
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.479845, -0.667643)
+target_position = Vector3(0, 0, -20)
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, 0.19178, -0.755202)
+mesh = SubResource("BoxMesh_sfvtn")
+script = ExtResource("2_if3pt")
