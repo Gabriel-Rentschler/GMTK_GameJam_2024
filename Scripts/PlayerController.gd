@@ -7,6 +7,8 @@ var is_grounded: bool # Whether the player is considered to be touching a walkab
 @onready var head = $'../Head' # y-axis rotation node (look left and right)
 @onready var feet = $Feet
 
+@export var is_scaling: bool;
+
 ### Explosion Mechanic
 var last_obj_touched
 
@@ -74,8 +76,8 @@ func _physics_process(delta):
 	#Throw object up when bottom object is scaling
 	if (feet.is_colliding()):
 		var obj = feet.get_collider()
-		if obj is RigidBody3D and !obj.get_groups().find("resizable"):
-			if obj.is_expanding:
+		if obj is RigidBody3D and obj.get_groups().find("resizable"):
+			if obj.is_scaling:
 				apply_central_impulse(Vector3(0,1,0) * 5.0)
 	
 ### Player posture FSM

@@ -14,6 +14,6 @@ func _physics_process(delta):
 		print("collided with obj:")
 		print(obj)
 		if (obj.get_groups().find("resizable")):
-			obj.is_expanding = true
+			obj.is_scaling = true
 			print("expanded the obj: ")
 			print(obj)
