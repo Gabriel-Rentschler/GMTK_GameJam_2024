@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c75t4ako22ads"]
+[gd_scene load_steps=7 format=3 uid="uid://c75t4ako22ads"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://b7doogrmk5sjw" path="res://player_physics_material.tres" id="1_ydf0t"]
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="2_jsuci"]
 [ext_resource type="Script" path="res://Scripts/Resizer.gd" id="3_oeq85"]
+[ext_resource type="Script" path="res://Entities/pickup.gd" id="4_dn85o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3453y"]
 
@@ -57,10 +58,20 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.326532, -0
 target_position = Vector3(0, 0, -20)
 collision_mask = 2
 
+[node name="PickupRay" type="RayCast3D" parent="Head/Pitch/Camera"]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0.486896, -0.424492, -1.09452)
+target_position = Vector3(0, 0, -15)
+collision_mask = 2
+script = ExtResource("4_dn85o")
+
 [node name="Gun" type="MeshInstance3D" parent="Head"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.309889, -0.755202)
 mesh = SubResource("BoxMesh_aeus0")
 skeleton = NodePath("../..")
 script = ExtResource("3_oeq85")
+
+[node name="Hold" type="Node3D" parent="Head"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.335891, 0.0652066, -1.54911)
 
 [connection signal="body_entered" from="RigidBody3D" to="RigidBody3D" method="_on_body_entered"]

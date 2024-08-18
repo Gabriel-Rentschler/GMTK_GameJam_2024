@@ -13,7 +13,7 @@ func _physics_process(delta):
 		obj = raycast.get_collider()
 		print("collided with obj:")
 		print(obj)
-		if (!obj.get_groups().find("resizable")):
+		if (obj.get_groups().find("resizable")):
 			obj.is_expanding = true
 			print("expanded the obj: ")
 			print(obj)

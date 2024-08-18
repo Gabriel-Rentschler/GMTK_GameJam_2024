@@ -1,4 +1,6 @@
 extends RigidBody3D
+
+#Scaling mechanic
 @export var is_expanding: bool;
 @onready var mesh = $Mesh
 @onready var collision = $Collision
@@ -6,10 +8,10 @@ extends RigidBody3D
 var max_size = 4
 var obj_touched
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_expanding = false
-	pass
 
 func _physics_process(delta):
 	
