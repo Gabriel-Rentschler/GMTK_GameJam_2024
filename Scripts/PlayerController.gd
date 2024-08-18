@@ -224,6 +224,7 @@ func _integrate_forces(state):
 
 ### Movement
 	var move = relative_input() # Get movement vector relative to player orientation
+	
 	var move2 = Vector2(move.x, move.z) # Convert movement for Vector2 methods
 	
 	set_friction(move)
@@ -368,6 +369,3 @@ func grow_capsule(is_done_shrinking, scale, move_camera):
 	if (capsule.height < original_height):
 		capsule.height += scale
 		camera.position.y += move_camera
-
-func _on_body_entered(body: Node) -> void:
-	last_obj_touched = body

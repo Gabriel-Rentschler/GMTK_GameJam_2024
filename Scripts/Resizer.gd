@@ -11,7 +11,9 @@ func _physics_process(delta):
 	#raycast
 	if Input.is_action_just_pressed("fire") and raycast.is_colliding():
 		obj = raycast.get_collider()
+		print("collided with obj:")
 		print(obj)
-		if (!get_tree().get_nodes_in_group("resizable").find(obj)):
+		if (!obj.get_groups().find("resizable")):
 			obj.is_expanding = true
+			print("expanded the obj: ")
 			print(obj)
