@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpiw4d14ejocr"]
+
+[ext_resource type="Script" path="res://Entities/player_rig idBody.gd" id="1_yckd1"]
+[ext_resource type="Script" path="res://Entities/Resizer.gd" id="2_6dl71"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kn1q6"]
+friction = 0.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rqdi7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_grnpw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ddwfw"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_kn1q6")
+script = ExtResource("1_yckd1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rqdi7")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_grnpw")
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, 0.19178, -0.755202)
+mesh = SubResource("BoxMesh_ddwfw")
+script = ExtResource("2_6dl71")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.671625, -0.252883)
+
+[node name="GunRay" type="RayCast3D" parent="Head/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.479845, -0.717019)
+target_position = Vector3(0, 0, -20)
+collision_mask = 2
+
+[node name="Feet" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02971, 0)

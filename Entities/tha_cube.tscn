@@ -1,7 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://i80ug0risqtg"]
+[gd_scene load_steps=7 format=3 uid="uid://i80ug0risqtg"]
 
 [ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="1_y0gf5"]
-[ext_resource type="Script" path="res://Entities/resizable_obj.gd" id="1_y3f4m"]
+[ext_resource type="Script" path="res://Scripts/resizable_obj.gd" id="1_y3f4m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srhlr"]
+friction = 0.5
+bounce = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lni23"]
 albedo_texture = ExtResource("1_y0gf5")
@@ -12,6 +16,10 @@ albedo_texture = ExtResource("1_y0gf5")
 
 [node name="Tha Cube" type="RigidBody3D" groups=["resizable"]]
 collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_srhlr")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
 script = ExtResource("1_y3f4m")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
@@ -20,3 +28,8 @@ mesh = SubResource("BoxMesh_sx308")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_obfqe")
+
+[node name="Bottom" type="RayCast3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

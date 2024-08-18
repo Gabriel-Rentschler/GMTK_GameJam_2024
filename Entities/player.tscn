@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://jliupg6w3srw"]
 
-[ext_resource type="Script" path="res://Entities/player.gd" id="1_tjnu7"]
-[ext_resource type="Script" path="res://Entities/Resizer.gd" id="2_if3pt"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_tjnu7"]
+[ext_resource type="Script" path="res://Scripts/Resizer.gd" id="2_if3pt"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdj5"]
 
