@@ -69,7 +69,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.495716, 0.0652066, -1.7364)
 
 [node name="Gun" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.309889, -0.755202)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.608823, -0.755202)
 mesh = SubResource("BoxMesh_aeus0")
 skeleton = NodePath("../..")
 script = ExtResource("3_oeq85")
