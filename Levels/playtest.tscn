@@ -49,8 +49,8 @@ environment = SubResource("Environment_erfcf")
 [node name="Tha Cube" parent="." instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246025, 0.914551, -2.0409)
 
-[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.283013, 1.91455, -2.03422)
-
 [node name="RigidPlayer" parent="." instance=ExtResource("4_x7qav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26733, 1.21292, 2.78295)
+
+[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)

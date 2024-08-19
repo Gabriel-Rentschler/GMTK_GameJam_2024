@@ -1,8 +1,7 @@
 extends RayCast3D
 
-var obj
-var collider
-var key = KEY_E
+var obj: RigidBody3D
+var collider: RigidBody3D
 @onready var point = %"Hold"
 
 # Called when the node enters the scene tree for the first time.
@@ -24,9 +23,5 @@ func _process(delta: float) -> void:
 		obj = collider
 		
 	if obj:
-		var direction : Vector3 = obj.global_transform.origin.direction_to(point.global_transform.origin)
-		var force : float = obj.global_transform.origin.distance_to(point.global_transform.origin);
-		if (force > 0.6):
-			force = 0.6
-		obj.linear_velocity = obj.linear_velocity * 0.95
-		obj.apply_central_impulse(direction * force)
+		obj.position = point.global_position
+		obj.linear_velocity = obj.linear_velocity * 0.8
