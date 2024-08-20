@@ -77,12 +77,14 @@ metadata/_editor_floor_ = Vector3(0, 6, 0)
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.126816, 10.09, 0.304858)
 light_color = Color(0.937255, 0.909804, 0.513726, 1)
-spot_range = 11.9483
-
-[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112024, 7.20305, 0.303746)
-light_color = Color(0.937255, 0.909804, 0.513726, 1)
+light_energy = 4.0
 spot_range = 11.9483
 
 [node name="Tha Cube" parent="." instance=ExtResource("5_lg5d7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7553, 1, -1.55382)
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.23884, 10.3937, -6.89819)
+light_color = Color(0.937255, 0.909804, 0.513726, 1)
+light_energy = 4.555
+spot_range = 11.9483
