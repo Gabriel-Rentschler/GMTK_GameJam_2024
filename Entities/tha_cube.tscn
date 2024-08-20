@@ -9,10 +9,26 @@ bounce = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lni23"]
 albedo_texture = ExtResource("1_y0gf5")
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_sx308"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_obfqe"]
+
+[sub_resource type="Animation" id="Animation_7dc2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_171b0"]
 resource_name = "floating"
@@ -30,21 +46,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0.0174533, -0.0349066), Vector3(0, 0, 0), Vector3(0.0523599, -0.0174533, 0.0349066), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7dc2p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_navq3"]

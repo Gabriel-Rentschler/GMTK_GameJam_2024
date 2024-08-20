@@ -20,7 +20,7 @@ var last_obj_touched
 @export var jump: int # Jump force multiplier
 @export var air_control: int  # Air control multiplier
 @export_range(15, 120, 1) var turning_scale : float  # How quickly to scale movement towards a turning direction. Lower is more.
-@export var mouse_sensitivity: = 0.05 # 0.05 
+@export var mouse_sensitivity: = 0.2 # 0.05 
 @export_range(0, 1, 0.01) var walkable_normal : float # 0.35 # Walkable slope. Lower is steeper
 @export_range(2, 20) var speed_to_crouch : int # Speed to move in/out of crouching position at. # Too high causes physics glitches currently.
 @export var speed_limit: float # 8 # Default speed limit of the player
