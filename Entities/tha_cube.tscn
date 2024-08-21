@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Scripts/resizable_obj.gd" id="1_y3f4m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srhlr"]
-friction = 0.5
 bounce = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lni23"]
