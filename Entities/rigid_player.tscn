@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="2_jsuci"]
 [ext_resource type="Script" path="res://Scripts/Resizer.gd" id="3_oeq85"]
 [ext_resource type="Script" path="res://Scripts/pickup.gd" id="4_dn85o"]
-[ext_resource type="Texture2D" uid="uid://rpjeqsi1d8wo" path="res://crosshair.png" id="4_lgwvv"]
+[ext_resource type="Texture2D" uid="uid://rpjeqsi1d8wo" path="res://UI/crosshair.png" id="4_lgwvv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3453y"]
 
