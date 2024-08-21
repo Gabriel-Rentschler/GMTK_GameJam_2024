@@ -88,3 +88,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.238
 light_color = Color(0.937255, 0.909804, 0.513726, 1)
 light_energy = 4.555
 spot_range = 11.9483
+
+[node name="Tha Cube2" parent="." instance=ExtResource("5_lg5d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66244, 1.51032, -0.504586)
