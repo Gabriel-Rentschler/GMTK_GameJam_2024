@@ -18,7 +18,8 @@ func _process(delta: float) -> void:
 				anim = obj.get_node("AnimationPlayer")
 				anim.play("floating")
 	if obj:
-		obj.position = point.global_position
+		
+		obj.global_position = point.global_position
 		obj.linear_velocity = obj.linear_velocity * 0.8
 		
 		#Fix for being able to expand object while player holds it

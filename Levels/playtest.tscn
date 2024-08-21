@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://d3mbp4k2g1dnn"]
 
-[ext_resource type="Script" path="res://Levels/world.gd" id="1_fgn5t"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_fgn5t"]
 [ext_resource type="Texture2D" uid="uid://cvg3eiutm5yuo" path="res://Textures/placeholder_1x1_orange.png" id="2_afmc2"]
 [ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/tha_cube.tscn" id="4_3485x"]
 [ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/rigid_player.tscn" id="4_x7qav"]
