@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c75t4ako22ads"]
+[gd_scene load_steps=8 format=3 uid="uid://c75t4ako22ads"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://b7doogrmk5sjw" path="res://player_physics_material.tres" id="1_ydf0t"]
 [ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="2_jsuci"]
 [ext_resource type="Script" path="res://Scripts/Resizer.gd" id="3_oeq85"]
 [ext_resource type="Script" path="res://Scripts/pickup.gd" id="4_dn85o"]
+[ext_resource type="Texture2D" uid="uid://rpjeqsi1d8wo" path="res://crosshair.png" id="4_lgwvv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3453y"]
 
@@ -63,6 +64,13 @@ transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, -1.095)
 target_position = Vector3(0, 0, -15)
 collision_mask = 2
 script = ExtResource("4_dn85o")
+
+[node name="TextureRect" type="TextureRect" parent="Head/Pitch/Camera"]
+offset_left = 320.0
+offset_top = 240.0
+offset_right = 352.0
+offset_bottom = 272.0
+texture = ExtResource("4_lgwvv")
 
 [node name="Hold" type="Node3D" parent="Head/Pitch"]
 unique_name_in_owner = true
