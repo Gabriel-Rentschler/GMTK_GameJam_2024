@@ -66,7 +66,7 @@ script = ExtResource("4_dn85o")
 
 [node name="Hold" type="Node3D" parent="Head/Pitch"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.495716, 0.0652066, -1.7364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="Gun" type="MeshInstance3D" parent="Head"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.374535, -0.608823, -0.755202)
