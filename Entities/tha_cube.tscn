@@ -1,14 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://i80ug0risqtg"]
+[gd_scene load_steps=11 format=3 uid="uid://i80ug0risqtg"]
 
-[ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="1_y0gf5"]
 [ext_resource type="Script" path="res://Scripts/resizable_obj.gd" id="1_y3f4m"]
+[ext_resource type="Texture2D" uid="uid://dk1x4ev3d1kun" path="res://Tiles/Parede de pedra_albedo.png" id="2_8cams"]
+[ext_resource type="Texture2D" uid="uid://d1ycg1lmq5cbq" path="res://Tiles/Parede de pedra_heightmap.png" id="3_k1syu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srhlr"]
 bounce = 0.2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lni23"]
-albedo_texture = ExtResource("1_y0gf5")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdequ"]
+albedo_texture = ExtResource("2_8cams")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_k1syu")
 
 [sub_resource type="BoxMesh" id="BoxMesh_sx308"]
 
@@ -62,7 +67,7 @@ max_contacts_reported = 5
 script = ExtResource("1_y3f4m")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_lni23")
+material_override = SubResource("StandardMaterial3D_cdequ")
 mesh = SubResource("BoxMesh_sx308")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
