@@ -63,10 +63,11 @@ func _input(event):
 		pitch.rotation.x = clamp(pitch.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	# Capture and release mouse
 	if event.is_action_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == 2:
-			Input.set_mouse_mode(0) # Free the mouse
-		else:
-			Input.set_mouse_mode(2)
+		get_tree().quit()
+		#if Input.get_mouse_mode() == 2:
+			#Input.set_mouse_mode(0) # Free the mouse
+		#else:
+			#Input.set_mouse_mode(2)
 var is_done_shrinking: bool # temporary # Whether the player is currently shrinking towards being crouched
 
 func _physics_process(delta):
