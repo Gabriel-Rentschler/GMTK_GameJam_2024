@@ -33,13 +33,15 @@ air_control = 25
 turning_scale = 45.0
 walkable_normal = 0.35
 speed_to_crouch = 8
-speed_limit = 8.0
+speed_limit = 5.0
 crouching_speed_limit = 4.0
-sprinting_speed_limit = 12.0
+sprinting_speed_limit = 8.0
 friction_divider = 4
 JUMP_THROTTLE = 0.1
 landing_assist = 1.5
 anti_slide_force = 4.0
+HEADBOB_MOVE_AMOUNT = 0.06
+HEADBOB_FREQUENCY = 2.4
 
 [node name="CollisionShape" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("CapsuleShape3D_3453y")

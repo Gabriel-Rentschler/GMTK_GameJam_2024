@@ -39,7 +39,10 @@ var is_jumping: bool = false # Whether the player has jumped
 var jump_throttle: float # Variable used with jump throttling calculations
 @export var landing_assist: float # 1.5 # Downward force to apply when letting go of space while jumping
 @export_range(0.1,100,0.1) var anti_slide_force : float # 3 # Amount of force to stop sliding with
+@export var HEADBOB_MOVE_AMOUNT : float
+@export var HEADBOB_FREQUENCY : float
 
+var headbob_time := 0.0
 ### Physics process vars
 var original_height: float
 var crouching_height: float
@@ -47,6 +50,13 @@ var current_speed_limit: float # Current speed limit to use. For standing or cro
 var posture # Current posture state
 enum { WALKING, CROUCHING, SPRINTING } # Possible values for posture
 
+func _headbob_effect(delta):
+	headbob_time += delta * self.linear_velocity.length()
+	camera.position = Vector3(
+		cos(headbob_time * HEADBOB_FREQUENCY * 0.5) * HEADBOB_MOVE_AMOUNT,
+		sin(headbob_time * HEADBOB_FREQUENCY) * HEADBOB_MOVE_AMOUNT,
+		0
+	)
 
 ### Godot notification functions ###
 func _ready():
@@ -55,7 +65,7 @@ func _ready():
 	crouching_height = capsule.height/2
 	Input.set_mouse_mode(2) # Capture and hide mouse
 
-func _input(event):
+func _unhandled_input(event):
 	# Player look
 	if event is InputEventMouseMotion:
 		head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
@@ -73,10 +83,14 @@ var is_done_shrinking: bool # temporary # Whether the player is currently shrink
 func _physics_process(delta):
 	# Keep camera with player
 	head.position = self.position + Vector3.UP * capsule.height/2
+
+	if is_grounded:
+		_headbob_effect(delta)
 	
 	#Throw object up when bottom object is scaling
 	if (feet.is_colliding()):
 		var obj = feet.get_collider()
+		
 		if obj is RigidBody3D and obj.get_groups().find("resizable"):
 			if obj.is_scaling:
 				apply_central_impulse(Vector3(0,1,0) * 5.0)
@@ -146,6 +160,7 @@ func _physics_process(delta):
 		# The player is grounded if any of the raycasts hit
 		if (collision and is_walkable(collision.normal.y)):
 			is_grounded = true
+			
 
 ### Sprinting & Crouching
 	var scale = delta * speed_to_crouch # Amount to change capsule height up or down
@@ -239,6 +254,7 @@ func _integrate_forces(state):
 		## accounting for the y value, preventing faster movement on slopes.
 		vel = state.get_linear_velocity()
 		vel -= contacted_body_vel_at_point
+		
 	else:
 		## Remove y value of velocity so only horizontal speed is checked in the air.
 		## Without this, the normalized vel causes the speed limit check to
