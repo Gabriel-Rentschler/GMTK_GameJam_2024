@@ -84,7 +84,7 @@ func _physics_process(delta):
 	# Keep camera with player
 	head.position = self.position + Vector3.UP * capsule.height/2
 
-	if is_grounded:
+	if is_grounded && posture != CROUCHING:
 		_headbob_effect(delta)
 	
 	#Throw object up when bottom object is scaling
