@@ -31,6 +31,7 @@ project/assembly_name="GMTK_GameJam_2024"
 
 grab=""
 resizable=""
+player=""
 
 [input]
 

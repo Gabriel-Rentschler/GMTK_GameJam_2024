@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://xtilkd3jpr0j"]
+[gd_scene load_steps=11 format=3 uid="uid://xtilkd3jpr0j"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_wo6aw"]
 [ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/tha_cube.tscn" id="2_eoas0"]
 [ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/rigid_player.tscn" id="3_32edr"]
 [ext_resource type="MeshLibrary" uid="uid://dneou62iautug" path="res://Tiles/dungeon_tileset.tres" id="4_3oxjt"]
+[ext_resource type="PackedScene" uid="uid://jfrt63davqsb" path="res://Entities/hazard_zone.tscn" id="5_5qrkq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gtwog"]
 
@@ -71,3 +72,6 @@ spot_range = 11.9483
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oxluv")
+
+[node name="Hazard Zone" parent="." instance=ExtResource("5_5qrkq")]
+transform = Transform3D(8, 0, 0, 0, 0.92, 0, 0, 0, 8, -0.725338, -3.5, -9.49939)
