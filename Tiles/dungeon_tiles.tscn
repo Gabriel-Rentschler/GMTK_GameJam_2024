@@ -1,5 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dce70qch0em5h"]
+[gd_scene load_steps=4 format=3 uid="uid://dce70qch0em5h"]
 
-[ext_resource type="PackedScene" uid="uid://dnidcf5vulxlf" path="res://Tiles/dungeon_tiles.glb" id="1_77c6n"]
+[ext_resource type="PackedScene" uid="uid://srccckbwvjht" path="res://Tiles/dungeon_tiles.glb" id="1_77c6n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdqgj"]
+shading_mode = 0
+albedo_color = Color(1.6, 1.2, 1.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_84mwg"]
+material = SubResource("StandardMaterial3D_pdqgj")
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="dungeon_tiles" instance=ExtResource("1_77c6n")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Cube" index="0"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" index="1"]
+mesh = SubResource("BoxMesh_84mwg")

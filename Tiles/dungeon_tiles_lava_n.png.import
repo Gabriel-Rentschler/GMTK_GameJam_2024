@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo5rajsk4vluk"
-path.s3tc="res://.godot/imported/dungeon_tiles_atlas.png-a532b8f9098f1b4fe6bea955b72e5d16.s3tc.ctex"
+uid="uid://c8nsn1508q4uu"
+path.s3tc="res://.godot/imported/dungeon_tiles_lava_n.png-c583c55561dd07736731a03ec717e127.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "4d703745ad75aef49738f475d14fe417"
+"md5": "ff553dcc68e183fe88a016b44ced4db5"
 }
 
 [deps]
 
-source_file="res://Tiles/dungeon_tiles_atlas.png"
-dest_files=["res://.godot/imported/dungeon_tiles_atlas.png-a532b8f9098f1b4fe6bea955b72e5d16.s3tc.ctex"]
+source_file="res://Tiles/dungeon_tiles_lava_n.png"
+dest_files=["res://.godot/imported/dungeon_tiles_lava_n.png-c583c55561dd07736731a03ec717e127.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Levels/dungeon_tiles_lava_n.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
