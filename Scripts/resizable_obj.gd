@@ -18,7 +18,7 @@ enum {LARGE, NORMAL, SMALL}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	is_scaling = false
+	#is_scaling = false
 	size = NORMAL
 	last_size = NORMAL
 	rayList.append($Bottom)

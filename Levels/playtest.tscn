@@ -51,5 +51,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246025, 0.914551, -2.0409)
 [node name="RigidPlayer" parent="." instance=ExtResource("4_x7qav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26733, 1.21292, 2.78295)
 
+[node name="Tha Cube6" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896831, 12.413, -8.20742)
+
+[node name="Tha Cube5" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9682, 8.70648, -8.16066)
+is_scaling = true
+
+[node name="Tha Cube4" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.999854, 4.6912, -8.1743)
+is_scaling = true
+
+[node name="Tha Cube3" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9841, 0.6582, -8.1636)
+is_scaling = true
+
 [node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)
