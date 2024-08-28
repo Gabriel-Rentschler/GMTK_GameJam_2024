@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cd0dmgp1hyloa"]
 
 [ext_resource type="MeshLibrary" uid="uid://dneou62iautug" path="res://Tiles/dungeon_tileset.tres" id="1_1s3ld"]
-[ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/rigid_player.tscn" id="2_78o34"]
-[ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/tha_cube.tscn" id="3_guuf2"]
+[ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/Player/rigid_player.tscn" id="2_78o34"]
+[ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/Cube/tha_cube.tscn" id="3_guuf2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f5po7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
