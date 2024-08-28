@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c75t4ako22ads"]
+[gd_scene load_steps=9 format=3 uid="uid://c75t4ako22ads"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://b7doogrmk5sjw" path="res://player_physics_material.tres" id="1_ydf0t"]
+[ext_resource type="PhysicsMaterial" uid="uid://b7doogrmk5sjw" path="res://Materials/player_physics_material.tres" id="1_ydf0t"]
 [ext_resource type="Script" path="res://Entities/Player/PlayerController.gd" id="2_jsuci"]
+[ext_resource type="Script" path="res://Entities/Player/PlayerBounce.gd" id="3_ddadh"]
 [ext_resource type="Script" path="res://Entities/Player/Resizer.gd" id="3_oeq85"]
 [ext_resource type="Script" path="res://Entities/Player/pickup.gd" id="4_dn85o"]
 [ext_resource type="Texture2D" uid="uid://rpjeqsi1d8wo" path="res://UI/crosshair.png" id="4_lgwvv"]
@@ -47,18 +48,24 @@ HEADBOB_FREQUENCY = 2.4
 [node name="CollisionShape" type="CollisionShape3D" parent="PlayerRigidBody"]
 shape = SubResource("CapsuleShape3D_3453y")
 
-[node name="Feet" type="RayCast3D" parent="PlayerRigidBody"]
+[node name="Rays" type="Node3D" parent="PlayerRigidBody"]
+script = ExtResource("3_ddadh")
 
-[node name="Front" type="RayCast3D" parent="PlayerRigidBody"]
+[node name="Feet" type="RayCast3D" parent="PlayerRigidBody/Rays"]
+
+[node name="Head" type="RayCast3D" parent="PlayerRigidBody/Rays"]
+target_position = Vector3(0, 1, 0)
+
+[node name="Front" type="RayCast3D" parent="PlayerRigidBody/Rays"]
 target_position = Vector3(0, 0, -1)
 
-[node name="Back" type="RayCast3D" parent="PlayerRigidBody"]
+[node name="Back" type="RayCast3D" parent="PlayerRigidBody/Rays"]
 target_position = Vector3(0, 0, 1)
 
-[node name="Left" type="RayCast3D" parent="PlayerRigidBody"]
+[node name="Left" type="RayCast3D" parent="PlayerRigidBody/Rays"]
 target_position = Vector3(-1, 0, 0)
 
-[node name="Right" type="RayCast3D" parent="PlayerRigidBody"]
+[node name="Right" type="RayCast3D" parent="PlayerRigidBody/Rays"]
 target_position = Vector3(1, 0, 0)
 
 [node name="Head" type="Node3D" parent="."]

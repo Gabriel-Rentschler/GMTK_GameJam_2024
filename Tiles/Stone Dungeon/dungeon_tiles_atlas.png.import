@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ycg1lmq5cbq"
-path.s3tc="res://.godot/imported/Parede de pedra_heightmap.png-4bfd943f1c1f6f8e05542e65efd76cd0.s3tc.ctex"
+uid="uid://bo5rajsk4vluk"
+path.s3tc="res://.godot/imported/dungeon_tiles_atlas.png-f4f9dbfd5752ae072b3a9775f2789a9f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "4d703745ad75aef49738f475d14fe417"
+}
 
 [deps]
 
-source_file="res://Tiles/Parede de pedra_heightmap.png"
-dest_files=["res://.godot/imported/Parede de pedra_heightmap.png-4bfd943f1c1f6f8e05542e65efd76cd0.s3tc.ctex"]
+source_file="res://Tiles/Stone Dungeon/dungeon_tiles_atlas.png"
+dest_files=["res://.godot/imported/dungeon_tiles_atlas.png-f4f9dbfd5752ae072b3a9775f2789a9f.s3tc.ctex"]
 
 [params]
 
@@ -24,8 +27,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=7
-roughness/src_normal="res://Tiles/Parede de pedra_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

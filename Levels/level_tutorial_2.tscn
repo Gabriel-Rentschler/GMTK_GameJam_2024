@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_odsux"]
 [ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/Cube/tha_cube.tscn" id="2_1nv1j"]
 [ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/Player/rigid_player.tscn" id="2_cjvqu"]
-[ext_resource type="MeshLibrary" uid="uid://dneou62iautug" path="res://Tiles/dungeon_tileset.tres" id="3_qsygv"]
+[ext_resource type="MeshLibrary" uid="uid://dneou62iautug" path="res://Tiles/Stone Dungeon/dungeon_tileset.tres" id="3_qsygv"]
 
 [sub_resource type="Environment" id="Environment_hcdg5"]
 

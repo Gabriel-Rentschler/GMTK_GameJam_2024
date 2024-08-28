@@ -31,7 +31,7 @@ var upper_slope_normal: Vector3 # Stores the lowest (steepest) slope normal
 var lower_slope_normal: Vector3 # Stores the highest (flattest) slope normal
 var slope_normal: Vector3 # Stores normals of contact points for iteration
 var contacted_body: RigidBody3D # Rigid body the player is currently contacting, if there is one
-var player_physics_material = load("res://player_physics_material.tres")
+var player_physics_material = load("res://Materials/player_physics_material.tres")
 var local_friction = player_physics_material.friction # Editor friction value
 var is_landing: bool = true # Whether the player has jumped and let go of jump
 var is_jumping: bool = false # Whether the player has jumped
@@ -87,13 +87,6 @@ func _physics_process(delta):
 	if is_grounded && posture != CROUCHING:
 		_headbob_effect(delta)
 	
-	#Throw object up when bottom object is scaling
-	if (feet.is_colliding()):
-		var obj = feet.get_collider()
-		
-		if obj is RigidBody3D and obj.get_groups().find("resizable"):
-			if obj.is_scaling:
-				apply_central_impulse(Vector3(0,1,0) * 5.0)
 	
 ### Player posture FSM
 	if Input.is_action_pressed("crouch"):

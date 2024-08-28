@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk1x4ev3d1kun"
-path.s3tc="res://.godot/imported/Parede de pedra_albedo.png-6e4f22dc8c36935146a5e8c9726d1ae2.s3tc.ctex"
+uid="uid://bkpoiquotcj1x"
+path.s3tc="res://.godot/imported/Parede de pedra_orm.png-e2239a96b32d3892497c0d253a92d3cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Tiles/Parede de pedra_albedo.png"
-dest_files=["res://.godot/imported/Parede de pedra_albedo.png-6e4f22dc8c36935146a5e8c9726d1ae2.s3tc.ctex"]
+source_file="res://Tiles/Stone/Parede de pedra_orm.png"
+dest_files=["res://.godot/imported/Parede de pedra_orm.png-e2239a96b32d3892497c0d253a92d3cc.s3tc.ctex"]
 
 [params]
 
@@ -24,8 +24,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://Tiles/Parede de pedra_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

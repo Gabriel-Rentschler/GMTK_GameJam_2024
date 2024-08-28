@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://i80ug0risqtg"]
 
 [ext_resource type="Script" path="res://Entities/Cube/resizable_obj.gd" id="1_y3f4m"]
-[ext_resource type="Texture2D" uid="uid://dk1x4ev3d1kun" path="res://Tiles/Parede de pedra_albedo.png" id="2_8cams"]
-[ext_resource type="Texture2D" uid="uid://d1ycg1lmq5cbq" path="res://Tiles/Parede de pedra_heightmap.png" id="3_k1syu"]
+[ext_resource type="Texture2D" uid="uid://dk1x4ev3d1kun" path="res://Tiles/Stone/Parede de pedra_albedo.png" id="2_8cams"]
+[ext_resource type="Texture2D" uid="uid://d1ycg1lmq5cbq" path="res://Tiles/Stone/Parede de pedra_heightmap.png" id="3_k1syu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_srhlr"]
 bounce = 0.2

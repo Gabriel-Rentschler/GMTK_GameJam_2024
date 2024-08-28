@@ -36,7 +36,7 @@ func _physics_process(delta):
 			var obj = ray.get_collider()
 			if obj is RigidBody3D and obj.get_groups().find("resizable"):
 				if obj.is_scaling:
-					apply_central_impulse(Vector3(0,1,0) * 2.0)
+					apply_central_impulse(-ray.target_position * 2.0)
 					
 	if is_scaling:
 		#set mass while growing/shrinking to avoid being drag over

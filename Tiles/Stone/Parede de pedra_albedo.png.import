@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo5rajsk4vluk"
-path.s3tc="res://.godot/imported/dungeon_tiles_atlas.png-a532b8f9098f1b4fe6bea955b72e5d16.s3tc.ctex"
+uid="uid://dk1x4ev3d1kun"
+path.s3tc="res://.godot/imported/Parede de pedra_albedo.png-6234592fb613bef0e52a14567d7e5805.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "4d703745ad75aef49738f475d14fe417"
-}
 
 [deps]
 
-source_file="res://Tiles/dungeon_tiles_atlas.png"
-dest_files=["res://.godot/imported/dungeon_tiles_atlas.png-a532b8f9098f1b4fe6bea955b72e5d16.s3tc.ctex"]
+source_file="res://Tiles/Stone/Parede de pedra_albedo.png"
+dest_files=["res://.godot/imported/Parede de pedra_albedo.png-6234592fb613bef0e52a14567d7e5805.s3tc.ctex"]
 
 [params]
 

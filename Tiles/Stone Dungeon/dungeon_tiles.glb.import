@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://srccckbwvjht"
-path="res://.godot/imported/dungeon_tiles.glb-aa9132f1b849787e40e26180d1ba7f99.scn"
+path="res://.godot/imported/dungeon_tiles.glb-6337e4cf60deaed4c6f2b7ae6abe2001.scn"
 
 [deps]
 
-source_file="res://Tiles/dungeon_tiles.glb"
-dest_files=["res://.godot/imported/dungeon_tiles.glb-aa9132f1b849787e40e26180d1ba7f99.scn"]
+source_file="res://Tiles/Stone Dungeon/dungeon_tiles.glb"
+dest_files=["res://.godot/imported/dungeon_tiles.glb-6337e4cf60deaed4c6f2b7ae6abe2001.scn"]
 
 [params]
 

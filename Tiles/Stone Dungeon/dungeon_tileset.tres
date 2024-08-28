@@ -1,20 +1,8 @@
-[gd_resource type="MeshLibrary" load_steps=75 format=4 uid="uid://dneou62iautug"]
+[gd_resource type="MeshLibrary" load_steps=64 format=4 uid="uid://dneou62iautug"]
 
-[ext_resource type="Texture2D" uid="uid://bo5rajsk4vluk" path="res://Tiles/dungeon_tiles_atlas.png" id="1_002of"]
-[ext_resource type="Texture2D" uid="uid://bhxy1tcaiggg4" path="res://Tiles/dungeon_tiles_atlas_n.png" id="2_jdlig"]
-[ext_resource type="Texture2D" uid="uid://b22ljcm6vbj7q" path="res://Tiles/dungeon_tiles_atlas_3.png" id="3_5dcen"]
-[ext_resource type="Texture2D" uid="uid://dp6dpawh8vubl" path="res://Tiles/dungeon_tiles_atlas_n_2.png" id="4_n3ato"]
-[ext_resource type="Texture2D" uid="uid://dop1v0xbm4wf4" path="res://Tiles/dungeon_tiles_lava.png" id="5_pc856"]
-[ext_resource type="Texture2D" uid="uid://c8nsn1508q4uu" path="res://Tiles/dungeon_tiles_lava_n.png" id="6_ucvat"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opl8w"]
-resource_name = "Material.001"
-cull_mode = 2
-albedo_texture = ExtResource("1_002of")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("2_jdlig")
-texture_filter = 2
+[ext_resource type="Material" uid="uid://iusg32ctht24" path="res://Materials/dungeon_tilemap_material_back_cull.tres" id="1_ar2so"]
+[ext_resource type="Texture2D" uid="uid://dop1v0xbm4wf4" path="res://Tiles/Stone Dungeon/dungeon_tiles_lava.png" id="5_pc856"]
+[ext_resource type="Texture2D" uid="uid://c8nsn1508q4uu" path="res://Tiles/Stone Dungeon/dungeon_tiles_lava_n.png" id="6_ucvat"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3mut4"]
 _surfaces = [{
@@ -38,7 +26,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 18,
 "index_data": PackedByteArray("AAAFAAEAAAADAAUAAgAIAAQAAgAGAAgABwALAAkABwAKAAsA"),
-"material": SubResource("StandardMaterial3D_opl8w"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -85,7 +73,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 30,
 "index_data": PackedByteArray("AAAFAAEAAAADAAUAAgAIAAQAAgAGAAgABwALAAkABwAKAAsADAAQAA0ADAAOABAADwATABEADwASABMA"),
-"material": SubResource("StandardMaterial3D_opl8w"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -110,15 +98,6 @@ image = SubResource("Image_07ygp")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vmhec"]
 data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, 2, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 2, -0.5, 0.5, 2, -0.5, 0.5, 1.19209e-07, -0.5, 0.5, 1, 0.5, 0.5, 1.19209e-07, 0.5, 0.5, 1.19209e-07, -0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, 2, 0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, 2, -0.5, 0.5, 2, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gyuu"]
-resource_name = "Material.008"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_6ljsd"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -141,7 +120,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("AAAEAAEAAAADAAQABQAGAAIABQAHAAYA"),
-"material": SubResource("StandardMaterial3D_8gyuu"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.008",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -243,7 +222,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AAADAAEAAAACAAMA"),
-"material": SubResource("StandardMaterial3D_opl8w"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -268,15 +247,6 @@ image = SubResource("Image_wvg7v")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ltmww"]
 data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a78wx"]
-resource_name = "Material.002"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_koxe7"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 2, 1),
@@ -299,7 +269,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 18,
 "index_data": PackedByteArray("AAAFAAEAAAADAAUAAgAIAAQAAgAGAAgABwALAAkABwAKAAsA"),
-"material": SubResource("StandardMaterial3D_a78wx"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.002",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -324,15 +294,6 @@ image = SubResource("Image_0ci5c")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ypb2k"]
 data = PackedVector3Array(-0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, 2, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 2, -0.5, 0.5, 2, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my3o2"]
-resource_name = "Material.003"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_kgj58"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -355,7 +316,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("BQAGAAMABQAHAAYAAAACAAEAAAAEAAIA"),
-"material": SubResource("StandardMaterial3D_my3o2"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.003",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -380,15 +341,6 @@ image = SubResource("Image_e3241")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o0x4m"]
 data = PackedVector3Array(-0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srrfo"]
-resource_name = "Material.004"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_6co0g"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -411,7 +363,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 18,
 "index_data": PackedByteArray("BgAHAAMABgAJAAcAAAACAAEAAAAFAAIACAAKAAQACAALAAoA"),
-"material": SubResource("StandardMaterial3D_srrfo"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.004",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -436,15 +388,6 @@ image = SubResource("Image_hls1c")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l4eb6"]
 data = PackedVector3Array(-0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqcl8"]
-resource_name = "Material.005"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_exrvh"]
 _surfaces = [{
 "aabb": AABB(-0.5, 1, -0.5, 1, 1e-05, 1),
@@ -467,7 +410,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AQACAAAAAQADAAIA"),
-"material": SubResource("StandardMaterial3D_lqcl8"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.005",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -492,15 +435,6 @@ image = SubResource("Image_sdgi3")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fx6uw"]
 data = PackedVector3Array(-0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbl7c"]
-resource_name = "Material.006"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_1vtgb"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 2, 1),
@@ -523,7 +457,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 24,
 "index_data": PackedByteArray("AAAEAAEAAAACAAQAAwAHAAUAAwAGAAcACAAMAAkACAAKAAwACwAPAA0ACwAOAA8A"),
-"material": SubResource("StandardMaterial3D_fbl7c"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.006",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -570,7 +504,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("AAAEAAEAAAACAAQAAwAHAAUAAwAGAAcA"),
-"material": SubResource("StandardMaterial3D_fbl7c"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.006",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -595,15 +529,6 @@ image = SubResource("Image_11hyd")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0yco1"]
 data = PackedVector3Array(-0.5, 0, -0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, 2, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 2, -0.5, 0.5, 2, -0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvil8"]
-resource_name = "Material.007"
-cull_mode = 2
-albedo_texture = ExtResource("3_5dcen")
-roughness = 0.5
-normal_enabled = true
-normal_texture = ExtResource("4_n3ato")
-texture_filter = 2
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_8otpk"]
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1e-05),
@@ -626,7 +551,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 6,
 "index_data": PackedByteArray("AAADAAEAAAACAAMA"),
-"material": SubResource("StandardMaterial3D_fvil8"),
+"material": ExtResource("1_ar2so"),
 "name": "Material.007",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
