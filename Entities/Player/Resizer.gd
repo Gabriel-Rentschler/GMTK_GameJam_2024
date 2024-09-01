@@ -11,19 +11,12 @@ func _physics_process(delta):
 	#raycast
 	if Input.is_action_just_pressed("left_mouse") && raycast.is_colliding():
 		obj = raycast.get_collider()
-		print("collided with obj:")
-		print(obj)
 		if (obj.get_groups().find("resizable") && obj.is_scaling == false):
 			obj.is_scaling = true
 			obj.grow_shrink = 0 #GROW
-			print("expanded the obj: ")
-			print(obj)
+			
 	elif Input.is_action_just_pressed("right_mouse") && raycast.is_colliding():
 		obj = raycast.get_collider()
-		print("collided with obj:")
-		print(obj)
 		if (obj.get_groups().find("resizable") && obj.is_scaling == false):
 			obj.is_scaling = true
 			obj.grow_shrink = 1 #SHRINK
-			print("shrinked the obj: ")
-			print(obj)

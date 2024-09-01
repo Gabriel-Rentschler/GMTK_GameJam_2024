@@ -1,8 +1,13 @@
 extends RigidBody3D
 
+#IMPORTS
+var bounce = load("res://bounce_mechanic.gd").new()
+
 #Scaling mechanic
 @export var is_scaling: bool
 @export var grow_shrink: int
+@export var player_throw_force: int
+@export var object_throw_force: int
 @onready var mesh = $Mesh
 @onready var collision = $Collision
 @onready var bottom = $Bottom
@@ -14,7 +19,6 @@ var obj_touched
 var size
 var last_size
 enum {LARGE, NORMAL, SMALL}
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,13 +35,8 @@ func _ready():
 func _physics_process(delta):
 	
 	#Throw object up when bottom object is scaling
-	for ray in rayList:
-		if ray.is_colliding():
-			var obj = ray.get_collider()
-			if obj is RigidBody3D and obj.get_groups().find("resizable"):
-				if obj.is_scaling:
-					apply_central_impulse(-ray.target_position * 2.0)
-					
+	bounce.bounce(rayList, self, false)
+		
 	if is_scaling:
 		#set mass while growing/shrinking to avoid being drag over
 		self.mass = 100

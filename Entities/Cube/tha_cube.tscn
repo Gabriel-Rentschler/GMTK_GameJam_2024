@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://i80ug0risqtg"]
+[gd_scene load_steps=8 format=3 uid="uid://i80ug0risqtg"]
 
 [ext_resource type="Script" path="res://Entities/Cube/resizable_obj.gd" id="1_y3f4m"]
 [ext_resource type="Texture2D" uid="uid://dk1x4ev3d1kun" path="res://Tiles/Stone/Parede de pedra_albedo.png" id="2_8cams"]
@@ -21,45 +21,6 @@ texture_repeat = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_obfqe"]
 
-[sub_resource type="Animation" id="Animation_7dc2p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_171b0"]
-resource_name = "floating"
-length = 12.0
-loop_mode = 1
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6, 9, 12),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0.0174533, -0.0349066), Vector3(0, 0, 0), Vector3(0.0523599, -0.0174533, 0.0349066), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_navq3"]
-_data = {
-"RESET": SubResource("Animation_7dc2p"),
-"floating": SubResource("Animation_171b0")
-}
-
 [node name="Tha Cube" type="RigidBody3D" groups=["grab", "resizable"]]
 collision_layer = 3
 collision_mask = 3
@@ -69,6 +30,8 @@ continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_y3f4m")
+player_throw_force = 5
+object_throw_force = 2
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_cdequ")
@@ -93,11 +56,6 @@ target_position = Vector3(0, 0, 1)
 
 [node name="Right" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_navq3")
-}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

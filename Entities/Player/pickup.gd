@@ -15,8 +15,6 @@ func _process(delta: float) -> void:
 			collider = get_collider()
 			if collider.mass < 5 && (!collider.get_groups().find("grab") && collider.is_class("RigidBody3D")):
 				obj = collider
-				anim = obj.get_node("AnimationPlayer")
-				#anim.play("floating")
 	if obj:
 
 		#obj.global_position = point.global_position
@@ -40,8 +38,6 @@ func _process(delta: float) -> void:
 		
 func _drop_object():
 	var direction : Vector3 = obj.global_transform.origin.direction_to(point.global_transform.origin)
-	anim = obj.get_node("AnimationPlayer")
-	anim.pause()
 	#obj.lock_rotation = false
 	obj.set_collision_layer_value(1, true)
 	obj.apply_central_impulse(-global_transform.basis.z * 60)
