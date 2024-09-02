@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3mbp4k2g1dnn"]
+[gd_scene load_steps=11 format=3 uid="uid://d3mbp4k2g1dnn"]
 
 [ext_resource type="Texture2D" uid="uid://cvg3eiutm5yuo" path="res://Textures/placeholder_1x1_orange.png" id="2_afmc2"]
 [ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/Cube/tha_cube.tscn" id="4_3485x"]
+[ext_resource type="PackedScene" uid="uid://boqhq3alv1pat" path="res://Entities/Bouncable Object/bouncable.tscn" id="4_ktk1x"]
 [ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/Player/rigid_player.tscn" id="4_x7qav"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jlen1"]
@@ -54,17 +55,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26733, 1.21292, 2.78295)
 [node name="Tha Cube6" parent="." instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896831, 12.413, -8.20742)
 
-[node name="Tha Cube5" parent="." instance=ExtResource("4_3485x")]
+[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)
+
+[node name="RigidBody3D" parent="." instance=ExtResource("4_ktk1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906758, 1.2416, 4.13354)
+
+[node name="Tower 1" type="Node3D" parent="."]
+
+[node name="Tha Cube5" parent="Tower 1" instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9682, 8.70648, -8.16066)
 is_scaling = true
 
-[node name="Tha Cube4" parent="." instance=ExtResource("4_3485x")]
+[node name="Tha Cube4" parent="Tower 1" instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.999854, 4.6912, -8.1743)
 is_scaling = true
 
-[node name="Tha Cube3" parent="." instance=ExtResource("4_3485x")]
+[node name="Tha Cube3" parent="Tower 1" instance=ExtResource("4_3485x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9841, 0.6582, -8.1636)
 is_scaling = true
-
-[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)

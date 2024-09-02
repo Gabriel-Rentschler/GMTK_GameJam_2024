@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://boqhq3alv1pat"]
+
+[ext_resource type="Script" path="res://Entities/Bouncable Object/bouncable.gd" id="1_1qo7m"]
+[ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="2_71b3w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idjsq"]
+albedo_texture = ExtResource("2_71b3w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ywmr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ps42i"]
+
+[sub_resource type="Animation" id="Animation_82y2j"]
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mxma3"]
+resource_name = "bounce"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sena"]
+_data = {
+"RESET": SubResource("Animation_82y2j"),
+"bounce": SubResource("Animation_mxma3")
+}
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["grab", "resizable"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_1qo7m")
+cooldown_time = 2
+player_throw_force = 10
+object_throw_force = 5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_idjsq")
+mesh = SubResource("BoxMesh_4ywmr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ps42i")
+
+[node name="Bottom" type="RayCast3D" parent="."]
+
+[node name="Top" type="RayCast3D" parent="."]
+target_position = Vector3(0, 1, 0)
+
+[node name="Front" type="RayCast3D" parent="."]
+target_position = Vector3(1, 0, 0)
+
+[node name="Back" type="RayCast3D" parent="."]
+target_position = Vector3(-1, 0, 0)
+
+[node name="Left" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 1)
+
+[node name="Right" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4sena")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
