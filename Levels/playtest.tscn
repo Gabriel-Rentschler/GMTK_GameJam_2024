@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3mbp4k2g1dnn"]
+[gd_scene load_steps=18 format=3 uid="uid://d3mbp4k2g1dnn"]
 
 [ext_resource type="Texture2D" uid="uid://cvg3eiutm5yuo" path="res://Textures/placeholder_1x1_orange.png" id="2_afmc2"]
 [ext_resource type="PackedScene" uid="uid://i80ug0risqtg" path="res://Entities/Cube/tha_cube.tscn" id="4_3485x"]
 [ext_resource type="PackedScene" uid="uid://boqhq3alv1pat" path="res://Entities/Bouncable Object/bouncable.tscn" id="4_ktk1x"]
 [ext_resource type="PackedScene" uid="uid://c75t4ako22ads" path="res://Entities/Player/rigid_player.tscn" id="4_x7qav"]
+[ext_resource type="PackedScene" uid="uid://dcpcsil2pij6h" path="res://Entities/Bouncable Object/bouncable_static.tscn" id="5_jve08"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jlen1"]
 friction = 0.5
@@ -22,55 +23,116 @@ uv1_triplanar = true
 [sub_resource type="Environment" id="Environment_erfcf"]
 ambient_light_color = Color(0.847474, 0.847474, 0.847474, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vndhh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nu1h"]
+albedo_texture = ExtResource("2_afmc2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h83ib"]
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vy03v"]
+material = SubResource("StandardMaterial3D_h83ib")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6axov"]
+size = Vector3(16, 0.02948, 49.7324)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31x4s"]
+albedo_texture = ExtResource("2_afmc2")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 5.47996, 7.27384, -9.35026)
 shadow_enabled = true
 
-[node name="Plane" type="StaticBody3D" parent="."]
+[node name="Tha Cube" parent="." instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36293, 0.914551, 18.8833)
+player_throw_force = 10
+
+[node name="Bouncable Static2" parent="." groups=["bouncable"] instance=ExtResource("5_jve08")]
+transform = Transform3D(1.79008, 0.77632, 0.439238, -0.702319, 1.83388, -0.378994, -0.549865, 0.184973, 1.91401, -4.96238, 9.56044, 24.3757)
+
+[node name="Bouncable Static5" parent="." groups=["bouncable"] instance=ExtResource("5_jve08")]
+transform = Transform3D(1.79008, 0.77632, 0.439238, -0.702319, 1.83388, -0.378994, -0.549865, 0.184973, 1.91401, -1.14967, 1.07945, 10.2131)
+player_throw_force = 5
+
+[node name="Bouncable Static3" parent="." groups=["bouncable"] instance=ExtResource("5_jve08")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8.20492, 9.56044, 32.3023)
+
+[node name="Bouncable Static4" parent="." groups=["bouncable"] instance=ExtResource("5_jve08")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.05634, 9.56044, 41.5706)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Bouncable Static" parent="Node3D" groups=["bouncable"] instance=ExtResource("5_jve08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25936, 0.546406, 9.79574)
+
+[node name="Tha Cube2" parent="Node3D" instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)
+
+[node name="Tower 1" type="Node3D" parent="Node3D"]
+
+[node name="Tha Cube5" parent="Node3D/Tower 1" instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9682, 8.70648, -8.16066)
+is_scaling = true
+
+[node name="Tha Cube4" parent="Node3D/Tower 1" instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.999854, 4.6912, -8.1743)
+is_scaling = true
+
+[node name="Tha Cube3" parent="Node3D/Tower 1" instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9841, 0.6582, -8.1636)
+is_scaling = true
+
+[node name="Tha Cube6" parent="Node3D" instance=ExtResource("4_3485x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896831, 12.413, -8.20742)
+
+[node name="Plane" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(20, 0, 0, 0, 10, 0, 0, 0, 20, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_jlen1")
 
-[node name="Collision" type="CollisionShape3D" parent="Plane"]
+[node name="Collision" type="CollisionShape3D" parent="Node3D/Plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00521851, -0.252609, 0.000358582)
 shape = SubResource("BoxShape3D_e16j7")
 
-[node name="Mesh" type="MeshInstance3D" parent="Plane"]
+[node name="Mesh" type="MeshInstance3D" parent="Node3D/Plane"]
 transform = Transform3D(1.9, 0, 0, 0, 0.0878096, 0, 0, 0, 2.1, 0, -0.05, 0)
 material_override = SubResource("StandardMaterial3D_aaelb")
 mesh = SubResource("BoxMesh_lyui6")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_rh0of")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_erfcf")
 
-[node name="Tha Cube" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246025, 0.914551, -2.0409)
-
 [node name="RigidPlayer" parent="." instance=ExtResource("4_x7qav")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.26733, 1.21292, 2.78295)
 
-[node name="Tha Cube6" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896831, 12.413, -8.20742)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 23.2449)
+physics_material_override = SubResource("PhysicsMaterial_vndhh")
 
-[node name="Tha Cube2" parent="." instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49205, 1.8291, -4.0818)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(15, 0, 0, 0, 0.098, 0, 0, 0, 48.146, -6, -6, 22)
+material_override = SubResource("StandardMaterial3D_8nu1h")
+mesh = SubResource("BoxMesh_vy03v")
 
-[node name="RigidBody3D" parent="." instance=ExtResource("4_ktk1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.906758, 1.2416, 4.13354)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00977, -6.0029, 21.9783)
+shape = SubResource("BoxShape3D_6axov")
 
-[node name="Tower 1" type="Node3D" parent="."]
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 15.4005, 0, 23.2449)
 
-[node name="Tha Cube5" parent="Tower 1" instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9682, 8.70648, -8.16066)
-is_scaling = true
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(15.36, 0, 0, 0, 0.1, 0, 0, 0, 49.302, -6, -6, 22)
+material_override = SubResource("StandardMaterial3D_31x4s")
+mesh = SubResource("BoxMesh_vy03v")
 
-[node name="Tha Cube4" parent="Tower 1" instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.999854, 4.6912, -8.1743)
-is_scaling = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00977, -6.0029, 21.9783)
+shape = SubResource("BoxShape3D_6axov")
 
-[node name="Tha Cube3" parent="Tower 1" instance=ExtResource("4_3485x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9841, 0.6582, -8.1636)
-is_scaling = true
+[node name="Bouncable" parent="." instance=ExtResource("4_ktk1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.54474, 0.585062, 3.4149)

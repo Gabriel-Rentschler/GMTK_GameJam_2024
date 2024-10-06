@@ -5,6 +5,26 @@ extends Node
 func _ready() -> void:
 	pass # Replace with function body.
 
+func obj_bounce(rayList: Array, bouncer: RigidBody3D, is_scaling: bool) -> bool:
+	for ray in rayList:
+		if ray.is_colliding():
+			var obj = ray.get_collider()
+			if obj is RigidBody3D and bouncer.is_in_group("bouncable"):
+				is_scaling = true
+				
+			if obj is RigidBody3D and is_scaling:
+				var direction = ray.global_position.direction_to(obj.global_position)
+				if obj.get_groups().find(&"player"):
+					print(ray)
+					#var direction = ray.global_position.normalized() + ray.target_position
+					print(direction)
+					obj.apply_central_impulse(direction * bouncer.player_throw_force)
+					
+				else:
+					obj.apply_central_impulse(direction * bouncer.object_throw_force)
+	return is_scaling
+
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func bounce(rayList: Array, rigidBody: RigidBody3D, is_player: bool) -> void:

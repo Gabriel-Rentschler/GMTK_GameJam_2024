@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 #IMPORTS
-var bounce = load("res://bounce_mechanic.gd").new()
+var bounce = load("res://Scripts/bounce_mechanic.gd").new()
 
 #Scaling mechanic
 @export var is_scaling: bool
@@ -35,7 +35,7 @@ func _ready():
 func _physics_process(delta):
 	
 	#Throw object up when bottom object is scaling
-	bounce.bounce(rayList, self, false)
+	bounce.obj_bounce(rayList, self, is_scaling)
 		
 	if is_scaling:
 		#set mass while growing/shrinking to avoid being drag over

@@ -5,7 +5,7 @@ var is_grounded: bool # Whether the player is considered to be touching a walkab
 @onready var capsule = $CollisionShape.shape # Capsule collision shape of the player
 @onready var camera = $'../Head/Pitch/Camera' # Camera node
 @onready var head = $'../Head' # y-axis rotation node (look left and right)
-@onready var feet = $Feet
+@onready var feet = $'Rays/Feet'
 
 @export var is_scaling: bool;
 

@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 #IMPORTS
-var bounce = load("res://bounce_mechanic.gd").new()
+var bounce = load("res://Scripts/bounce_mechanic.gd").new()
 @onready var anim = $AnimationPlayer
 
 @export var is_scaling: bool
@@ -32,14 +32,11 @@ func _physics_process(delta):
 		timelapsed = 0
 	
 	#Throw object up when bottom object is scaling
-	bounce.bounce(rayList, self, false)
+	#bounce.obj_bounce(rayList, is_scaling)
 	
 	#Check if any object collides with it and is not in cooldown to throw it
-	for ray in rayList:
-		if ray.is_colliding():
-			var obj = ray.get_collider()
-			if obj is RigidBody3D and !cooldown:
-				is_scaling = true
+	if !cooldown:
+		is_scaling = bounce.obj_bounce(rayList, self, is_scaling)
 	
 	#play scaling animation
 	if is_scaling:

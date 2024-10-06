@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://boqhq3alv1pat"]
+[gd_scene load_steps=9 format=3 uid="uid://dcpcsil2pij6h"]
 
-[ext_resource type="Script" path="res://Entities/Bouncable Object/bouncable.gd" id="1_1qo7m"]
-[ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="2_71b3w"]
+[ext_resource type="Texture2D" uid="uid://byj2will4waax" path="res://Textures/placeholder_1x1_red.png" id="1_58ldh"]
+[ext_resource type="Script" path="res://Entities/Bouncable Object/bouncable.gd" id="1_kih3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idjsq"]
-albedo_texture = ExtResource("2_71b3w")
+albedo_texture = ExtResource("1_58ldh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ywmr"]
 
@@ -49,10 +49,11 @@ _data = {
 "bounce": SubResource("Animation_mxma3")
 }
 
-[node name="Bouncable" type="RigidBody3D" groups=["bouncable", "grab", "resizable"]]
+[node name="Bouncable Static" type="RigidBody3D" groups=["grab", "resizable"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_1qo7m")
+freeze = true
+script = ExtResource("1_kih3s")
 cooldown_time = 2
 player_throw_force = 10
 object_throw_force = 5

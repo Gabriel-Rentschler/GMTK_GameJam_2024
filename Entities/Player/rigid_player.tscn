@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c75t4ako22ads"]
+[gd_scene load_steps=8 format=3 uid="uid://c75t4ako22ads"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://b7doogrmk5sjw" path="res://Materials/player_physics_material.tres" id="1_ydf0t"]
 [ext_resource type="Script" path="res://Entities/Player/PlayerController.gd" id="2_jsuci"]
-[ext_resource type="Script" path="res://Entities/Player/PlayerBounce.gd" id="3_ddadh"]
 [ext_resource type="Script" path="res://Entities/Player/Resizer.gd" id="3_oeq85"]
 [ext_resource type="Script" path="res://Entities/Player/pickup.gd" id="4_dn85o"]
 [ext_resource type="Texture2D" uid="uid://rpjeqsi1d8wo" path="res://UI/crosshair.png" id="4_lgwvv"]
@@ -11,10 +10,10 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_aeus0"]
 
-[node name="RigidPlayer" type="Node3D"]
+[node name="RigidPlayer" type="Node3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="PlayerRigidBody" type="RigidBody3D" parent="." groups=["player"]]
+[node name="PlayerRigidBody" type="RigidBody3D" parent="."]
 unique_name_in_owner = true
 collision_mask = 5
 axis_lock_angular_x = true
@@ -49,7 +48,6 @@ HEADBOB_FREQUENCY = 2.4
 shape = SubResource("CapsuleShape3D_3453y")
 
 [node name="Rays" type="Node3D" parent="PlayerRigidBody"]
-script = ExtResource("3_ddadh")
 
 [node name="Feet" type="RayCast3D" parent="PlayerRigidBody/Rays"]
 
